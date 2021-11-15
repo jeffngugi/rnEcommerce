@@ -1,13 +1,19 @@
-import { StyleSheet, Text, View } from 'react-native'
+import React from 'react'
+import { StyleSheet, Text, View, SafeAreaView } from 'react-native'
+import {Starting} from './src/screens'
 
 const App = () => {
   return (
-    <View>
-      <Text>Ecommerce app</Text>
-    </View>
+    <SafeAreaView style={styles.appContainer}>
+      <Starting />
+    </SafeAreaView>
   )
 }
 
 export default App
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  appContainer:{
+    flex:1
+  }
+})
