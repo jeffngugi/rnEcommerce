@@ -1,5 +1,7 @@
 package com.rnecomts;
 
+import android.os.Bundle;
+
 import com.facebook.react.ReactActivity;
 
 public class MainActivity extends ReactActivity {
@@ -12,4 +14,9 @@ public class MainActivity extends ReactActivity {
   protected String getMainComponentName() {
     return "rnEcomts";
   }
+
+  @Override
+protected void onCreate(Bundle savedInstanceState) {
+  super.onCreate(null);
+}
 }

@@ -3,7 +3,7 @@ import { SafeAreaView, StyleSheet, Text, View, Image, TouchableOpacity} from 're
 import {COLORS, FONTS, icons, images, SIZES} from '../constants'
 import PrimaryGradient from '../utils/PrimaryGradient'
 
-const Starting = () => {
+const Starting = ({navigation}: {navigation: any}) => {
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.imageContainer}>
@@ -16,15 +16,15 @@ const Starting = () => {
                 <View  style={styles.startedContainer}>
                    <PrimaryGradient style={styles.startedContainer}>
                     <View style={{flexDirection:'row', alignSelf:'center', marginVertical:SIZES.padding+2}}>
-                        <Text style={styles.my}>My</Text>
-                        <Text style={styles.shop}>Shop</Text>
+                        <Text style={styles.my}>Amach</Text>
+                        <Text style={styles.shop}>eez </Text>
                     </View>
                     <View style={{marginHorizontal:SIZES.base}}>
                     <Text style={styles.intro}>Lorem Ipsum is simply dummy text of the printing and typesetting industry</Text>
                     </View>
                    
                     <TouchableOpacity 
-                        onPress={()=>console.log('get to the login screen')}
+                        onPress={()=>navigation.navigate('Verification')}
                         style={styles.btn}
                     >
                         
