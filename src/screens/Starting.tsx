@@ -24,7 +24,7 @@ const Starting = ({navigation}: {navigation: any}) => {
                     </View>
                    
                     <TouchableOpacity 
-                        onPress={()=>navigation.navigate('Verification')}
+                        onPress={()=>navigation.navigate('Login')}
                         style={styles.btn}
                     >
                         
