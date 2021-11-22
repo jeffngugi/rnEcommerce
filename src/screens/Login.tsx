@@ -15,10 +15,10 @@ const Login = ({navigation}: {navigation: any}) => {
 
 
     const handleSkip = ()=>{
-        console.log('Handle skip, navigate user to hme page')
+        navigation.navigate('HomeNav')
     }
     return (
-        <View
+        <SafeAreaView
             style={styles.container}
         >
             <PrimaryGradient style={styles.header}>
@@ -46,7 +46,7 @@ const Login = ({navigation}: {navigation: any}) => {
                     <Text style={styles.skipTxt}>Skip</Text>
                 </TouchableOpacity>
             </View>
-        </View>
+        </SafeAreaView>
     )
 }
 
@@ -54,14 +54,13 @@ export default Login
 
 const styles = StyleSheet.create({
     container:{
-        flex:2
+        flex:1
     },
     header:{
-        backgroundColor:'red',
-        flex:1,
         borderBottomRightRadius:SIZES.width*2,
         justifyContent:"center",
-        paddingHorizontal:SIZES.font
+        paddingHorizontal:SIZES.font,
+        height:SIZES.height/4
     },
     body:{
         flex:3,

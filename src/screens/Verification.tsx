@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, SafeAreaView, TextInput } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
 import { COLORS, FONTS, SIZES } from '../constants'
 import PrimaryGradient from '../utils/PrimaryGradient'
-
+import OTPInputView from '@twotalltotems/react-native-otp-input'
 
 const Login = ({navigation}: {navigation: any}) => {
 
@@ -38,6 +38,28 @@ const Login = ({navigation}: {navigation: any}) => {
                 </View>
 
                 {/* text input here */}
+                <View style={{marginVertical:SIZES.padding*2}}>
+                    <OTPInputView 
+                        pinCount={4}
+                        style={{
+                            width:'100%',
+                            height:50
+                        }}
+                        codeInputFieldStyle={{
+                            width:65,
+                            height:65,
+                            backgroundColor:COLORS.lightGray2,
+                            borderBottomColor:COLORS.green,
+                            borderWidth:0,
+                            borderBottomWidth:3,
+                            color:COLORS.black,
+                            ...FONTS.h3
+                        }}
+                        onCodeFilled={()=>{
+                            console.log('jeff ngugi')
+                        }}
+                    />
+                </View>
 
                 <TouchableOpacity
                     onPress={handleConfirmOtp}
@@ -103,7 +125,8 @@ const styles = StyleSheet.create({
     },
     skipTxt:{
         color:COLORS.darkGray2,
-        ...FONTS.h3
+        ...FONTS.h3,
+        fontWeight:'bold'
     },
     phoneContainer:{
         flexDirection:'row',
