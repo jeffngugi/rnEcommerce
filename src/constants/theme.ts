@@ -3,6 +3,7 @@ const {width, height} = Dimensions.get('window')
 
 export const COLORS = {
     primary: "#2A034B", //orange
+    primary2:"#691fa4",
     transparentPrimray: 'rgba(227, 120, 75, 0.4)',
     orange: "#FFA133",
     lightOrange: "#FFA133",

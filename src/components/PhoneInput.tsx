@@ -4,7 +4,7 @@ import { COLORS, FONTS, icons, images, SIZES } from '../constants'
 import Modal from 'react-native-modal'
 
 const PhoneInput = ({}) => {
-    const [countryModal, setCountryModal] = useState<boolean>(true)
+    const [countryModal, setCountryModal] = useState<boolean>(false)
 
     const handleSetCountry = ()=>{
         setCountryModal(false)
