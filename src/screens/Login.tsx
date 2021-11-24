@@ -1,11 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { StyleSheet, Text, View, SafeAreaView, TextInput } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import PhoneInput from '../components/PhoneInput'
 import { COLORS, FONTS, SIZES } from '../constants'
 import PrimaryGradient from '../utils/PrimaryGradient'
+import Modal from 'react-native-modal'
 
 
 const Login = ({navigation}: {navigation: any}) => {
+
+    const [countryModal, setCountryModal] = useState<boolean>(true)
+
 
     const handleSendOtp = ()=>{
         // function to send otp here
@@ -29,9 +34,7 @@ const Login = ({navigation}: {navigation: any}) => {
                 <Text style={styles.description}>Please enter your phone number to verify your account</Text>
 
                 {/* text input here */}
-                <TextInput
-                    keyboardType='phone-pad'
-                />
+               <PhoneInput />
 
                 <TouchableOpacity
                     onPress={handleSendOtp}
@@ -46,6 +49,7 @@ const Login = ({navigation}: {navigation: any}) => {
                     <Text style={styles.skipTxt}>Skip</Text>
                 </TouchableOpacity>
             </View>
+            
         </SafeAreaView>
     )
 }
@@ -97,5 +101,8 @@ const styles = StyleSheet.create({
     skipTxt:{
         color:COLORS.darkGray2,
         ...FONTS.h3
+    },
+    modalbody:{
+        padding:SIZES.radius
     }
 })

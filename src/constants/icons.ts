@@ -1,3 +1,3 @@
-const icon1 = 'jeff'
+const down = require('../assets/icons/down.png')
 
-export default{icon1}
+export default{down}

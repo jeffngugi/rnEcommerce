@@ -10,7 +10,7 @@ const Login = ({navigation}: {navigation: any}) => {
     const handleConfirmOtp = ()=>{
         // function to send otp here
         // then navigate to otp screen
-        navigation.navigate('Verification')
+        navigation.navigate('HomeNav')
     }
 
     const handleResend = () =>{
@@ -85,11 +85,10 @@ const styles = StyleSheet.create({
         flex:1
     },
     header:{
-        backgroundColor:'red',
-        flex:1,
         borderBottomRightRadius:SIZES.width*2,
         justifyContent:"center",
-        paddingHorizontal:SIZES.font
+        paddingHorizontal:SIZES.font,
+        height:SIZES.height/4
     },
     body:{
         flex:3,
