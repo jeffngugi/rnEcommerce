@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, Platform, Image, TouchableOpacity, GestureRespo
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 import {Home, Cart, Catalogue, Profile, Favorite} from '../screens'
 import { COLORS, SIZES, icons, FONTS } from '../constants'
-import LinearGradient from 'react-native-linear-gradient'
+import PrimaryGradient from '../utils/PrimaryGradient'
 
 const Tab = createBottomTabNavigator()
 
@@ -23,17 +23,16 @@ const TabBarCustomButton =({children, onPress}:ITabProps)=>{
           }}
           onPress={onPress}
       >
-          <LinearGradient 
-              colors={[COLORS.primary, COLORS.primary2]}
+          <PrimaryGradient
               style={{
                   width:80,
-                  height:60,
+                  height:55,
                   borderTopLeftRadius:30,
-                  borderBottomLeftRadius:30
+                  borderBottomLeftRadius:30,
               }}
           >
               {children}
-          </LinearGradient>
+          </PrimaryGradient>
       </TouchableOpacity>
   )
 }
@@ -154,14 +153,21 @@ const HomeTabs = () => {
                 component={Cart}
                 options={{
                     tabBarIcon:({focused})=>(
+                      <View style={{flexDirection:'row', alignItems:'center'}}>
                         <Image source={icons.cart}
                             resizeMode='contain'
                             style={{
                                 width:20,
                                 height:20,
-                                tintColor:COLORS.white
+                                tintColor:COLORS.white,
+                                marginHorizontal:5
                             }}
                         />
+                        <View>
+                          <Text style={{...FONTS.h5, color:COLORS.white, fontWeight:'bold'}}>$239.98</Text>
+                          <Text style={{...FONTS.h5, color:COLORS.white}}>2 items</Text>
+                        </View>
+                        </View>
                     ),
                     tabBarButton:(props) =>(
                       <TabBarCustomButton {...props}/>
