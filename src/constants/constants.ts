@@ -58,4 +58,23 @@ const catalogue =[
     }
 ]
 
-export default {catalogue}
+const bannerData = [
+    {
+        id:1,
+        name:"Fashion Sale"
+    },
+    {
+        id:2,
+        name:"Weekend offer"
+    },
+    {
+        id:3,
+        name:"Electronic Flash"
+    },
+    {
+        id:4,
+        name:"Monday Cyber"
+    }
+]
+
+export default {catalogue, bannerData}

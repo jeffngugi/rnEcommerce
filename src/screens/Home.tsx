@@ -10,7 +10,7 @@ const Home = () => {
     return (
         <SafeAreaView style={styles.homecontainer}>
             <HomeHeader />
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
             <Banner />
             <HomeCatalogue />
             <Featured />

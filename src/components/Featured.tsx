@@ -15,6 +15,7 @@ const Featured = () => {
                 <ProductCard />
                 <ProductCard />
                 <ProductCard />
+                <ProductCard />
            </View>
         </View>
     )

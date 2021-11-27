@@ -77,8 +77,8 @@ const styles = StyleSheet.create({
 
     },
     moreIcon:{
-        height:12,
-        width:12,
+        height:10,
+        width:10,
         tintColor:COLORS.gray,
         alignSelf:'center'
     },

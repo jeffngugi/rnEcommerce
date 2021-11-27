@@ -27,7 +27,8 @@ export const COLORS = {
     dark:'#34283E',
     transparent: 'transparent',
     transparentBlack1: "rgba(0, 0, 0, 0.1)",
-    transparentBlack7: "rgba(0, 0, 0, 0.7)"
+    transparentBlack7: "rgba(0, 0, 0, 0.7)",
+    background:"#F4F3F4"
 
 };
 
