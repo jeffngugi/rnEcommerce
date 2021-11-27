@@ -1,13 +1,20 @@
 import React from 'react'
-import { StyleSheet, Text, View, SafeAreaView, TouchableOpacity, Image, TextInput} from 'react-native'
+import { StyleSheet, ScrollView, SafeAreaView,} from 'react-native'
 import { COLORS, FONTS, icons, SIZES } from '../constants'
 import HomeHeader from '../components/HomeHeader'
+import HomeCatalogue from '../components/HomeCatalogue'
+import Banner from '../components/Banner'
+import Featured from '../components/Featured'
 
 const Home = () => {
     return (
         <SafeAreaView style={styles.homecontainer}>
             <HomeHeader />
-            <Text>Jeff ngugi</Text>
+            <ScrollView>
+            <Banner />
+            <HomeCatalogue />
+            <Featured />
+            </ScrollView>
         </SafeAreaView>
     )
 }
@@ -17,7 +24,7 @@ export default Home
 const styles = StyleSheet.create({
     homecontainer:{
         flex:1,
-        backgroundColor:'red'
+        backgroundColor:COLORS.lightGray1
     },
     headerContainer:{
         backgroundColor:COLORS.primary,

@@ -10,5 +10,6 @@ const bell = require('../assets/icons/bell.png')
 const menu = require('../assets/icons/menu.png')
 const like = require('../assets/icons/like.png')
 const search = require('../assets/icons/search.png')
+const more = require('../assets/icons/more.png')
 
-export default{down, home, heart, heartfilled, catalogue, cart, user, userfilled, bell, menu, like, search}
+export default{down, home, heart, heartfilled, catalogue, cart, user, userfilled, bell, menu, like, more, search}

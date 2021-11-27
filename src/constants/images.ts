@@ -1,5 +1,5 @@
 const user = require('../assets/images/user.png')
 const start = require('../assets/images/start.png')
 const flag = require('../assets/images/flag.png')
-
-export default{user, start, flag}
+const product1 = require('../assets/images/item1.png')
+export default{user, start, flag, product1}

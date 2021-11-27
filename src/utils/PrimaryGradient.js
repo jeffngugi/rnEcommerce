@@ -15,3 +15,5 @@ const  GradientStyle = ({ children, style }) => {
 };
 
 export default GradientStyle
+
+// colors={['#34283E', '#845FA1']}

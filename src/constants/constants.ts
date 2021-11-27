@@ -1,11 +1,11 @@
 const womens = require('../assets/images/cat-women.png')
-const mens  = require('../assets/images/cat-women.png')
-const phones  = require('../assets/images/cat-women.png')
-const computers  = require('../assets/images/cat-women.png')
+const mens  = require('../assets/images/cat-man.png')
+const phones  = require('../assets/images/cat-phone.png')
+const computers  = require('../assets/images/cat-computer.png')
 const smarthome  = require('../assets/images/cat-women.png')
-const art  = require('../assets/images/cat-women.png')
-const baby  = require('../assets/images/cat-women.png')
-const sport  = require('../assets/images/cat-women.png')
+const art  = require('../assets/images/cat-art.png')
+const baby  = require('../assets/images/cat-baby.png')
+const sport  = require('../assets/images/cat-sport.png')
 
 const catalogue =[
     {

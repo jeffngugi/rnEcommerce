@@ -47,7 +47,7 @@ const HomeTabs = () => {
       headerShown:false,
       tabBarStyle: {
         paddingVertical: Platform.OS === 'ios' ? 20 : 0,
-        height: 78,
+        height: 58,
         backgroundColor: COLORS.white,
         borderTopLeftRadius:SIZES.radius*2,
         borderTopRightRadius:SIZES.radius*2,

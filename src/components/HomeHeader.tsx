@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput} from 'react-native'
 import { COLORS, icons, SIZES, FONTS } from '../constants'
+import PrimaryGradient from '../utils/PrimaryGradient'
 
 const HomeHeader = () => {
     const handleSearch = ()=>{
@@ -8,7 +9,7 @@ const HomeHeader = () => {
     }
     return (
         <View style={styles.container}>
-            <View style={styles.headerContainer}>
+            <PrimaryGradient style={styles.headerContainer}>
             <View style={styles.header}>
                     <TouchableOpacity>  
                         <Image source={icons.menu} style={styles.headerIcon}/>
@@ -18,7 +19,7 @@ const HomeHeader = () => {
                         <Image source={icons.bell} style={styles.headerIcon}/>
                     </TouchableOpacity>
                 </View>
-            </View>
+            </PrimaryGradient>
             <View style={styles.searchContainer}>
             <TextInput style={styles.searchInput} placeholder='What are you looking for?'/>
                     <TouchableOpacity
@@ -40,7 +41,7 @@ const styles = StyleSheet.create({
     },
     headerContainer:{
         backgroundColor:COLORS.primary,
-        height:110,
+        height:100,
         paddingHorizontal:SIZES.font,
         paddingVertical:SIZES.font,
     },
@@ -79,7 +80,7 @@ const styles = StyleSheet.create({
     },
     searchInput:{
         flex:1,
-        height:55,
+        height:50,
         color:COLORS.darkGray2,
         borderWidth:0.5,
         borderRadius:SIZES.font*2,
