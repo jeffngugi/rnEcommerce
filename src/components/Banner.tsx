@@ -1,10 +1,11 @@
-import React, {useRef} from 'react'
+import React, {useRef,useState} from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { COLORS, FONTS, images, SIZES, constants } from '../constants'
-import Carousel from 'react-native-snap-carousel'
+import Carousel,{Pagination} from 'react-native-snap-carousel'
 
 const Banner = () => {
     const carouselRef = useRef(null)
+    const [active, setActive] = useState(0)
 
     const _renderItem = (item)=>(
         <View>
@@ -13,7 +14,7 @@ const Banner = () => {
             </View>
             <View style={styles.bannerOverlay}>
                 <TouchableOpacity
-                    onPress={()=>console.log('banner touched')}
+                    onPress={()=>console.log('You clicked '+ item.name)}
                 >
                 <Text style={styles.bannerTxt}>{item.name}</Text>
                 <Text style={styles.seeMore}>See More</Text>
@@ -34,7 +35,31 @@ const Banner = () => {
                     autoplay={true}
                     autoplayInterval={3000}
                     enableMomentum={false}
+                    onSnapToItem={(index)=>setActive(index)}
                 /> 
+                <Pagination
+                        
+                        dotsLength={4}
+                        activeDotIndex={active}
+                        containerStyle={{ backgroundColor:COLORS.transparent, paddingVertical:2, paddingHorizontal:0, bottom:5, position:'absolute', alignSelf:'center'}}
+                        dotStyle={{
+                            width: 55,
+                            height: 3,
+                            borderRadius: 4,
+                            marginHorizontal: 0,
+                            backgroundColor: COLORS.white,
+                        }}
+                        inactiveDotStyle={{
+                            // Define styles for inactive dots here
+                            width: 50,
+                            height: 4,
+                            borderRadius: 5,
+                            marginHorizontal: 0,
+                            backgroundColor:COLORS.lightGray1,
+                        }}
+                        inactiveDotOpacity={0.4}
+                        inactiveDotScale={0.6}
+                     />
         </View>
     )
 }
