@@ -56,6 +56,7 @@ const App = () => {
               </View>
 
               {/*  Add a Small Footer at Bottom */}
+              <View style={styles.footer} />
             </ScrollView>
           </View>
         </ActionSheet>
@@ -66,10 +67,46 @@ const App = () => {
 
 export default App;
 
-
+const items = [
+  100,
+  60,
+  150,
+  200,
+  170,
+  80,
+  41,
+  101,
+  61,
+  151,
+  202,
+  172,
+  82,
+  43,
+  103,
+  64,
+  155,
+  205,
+  176,
+  86,
+  46,
+  106,
+  66,
+  152,
+  203,
+  173,
+  81,
+  42,
+];
 
 const styles = StyleSheet.create({
-  
+  footer: {
+    height: 100,
+  },
+  listItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
   placeholder: {
     height: 15,
     backgroundColor: '#f0f0f0',
