@@ -2,11 +2,11 @@ import React from 'react'
 import { StyleSheet, Text, Image, View, TouchableOpacity } from 'react-native'
 import { COLORS, FONTS, images, SIZES } from '../constants'
 
-const CatalogueCard = ({item}) => {
+const CatalogueCard = ({item, handleOpenCategory}) => {
     return (
         <TouchableOpacity
             style={styles.container}
-            onPress={()=>console.log('catalogue clicked')}
+            onPress={()=>handleOpenCategory()}
         >
             <Text style={styles.txt}>{item.name}</Text>
             <Image source={item.image} style={styles.image} />
