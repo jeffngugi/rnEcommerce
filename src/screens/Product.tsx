@@ -1,9 +1,38 @@
 import React from 'react'
-import { StyleSheet, Text, View, ScrollView, SafeAreaView, TouchableOpacity, Image } from 'react-native'
+import { StyleSheet, Text, View, ScrollView, SafeAreaView, TouchableOpacity, Image, FlatList } from 'react-native'
 import {FONTS, SIZES, COLORS, constants, icons, images} from '../constants'
 import Carousel,{Pagination} from 'react-native-snap-carousel'
 import {  AirbnbRating } from 'react-native-ratings';
 import Review from '../components/Review'
+import RelatedProductCard from '../components/RelatedProductCard'
+
+const related = [
+    {
+        id:1,
+        title:"jeff",
+        image:images.item1
+    },
+    {
+        id:2,
+        title:"tv set",
+        image:images.item2
+    },
+    {
+        id:3,
+        title:"Radio",
+        image:images.item3
+    },
+    {
+        id:4,
+        title:"Fridge",
+        image:images.item4
+    },
+    {
+        id:5,
+        title:"radio",
+        image:images.item5
+    }
+]
 
 const ColorButton = ()=>(
     <TouchableOpacity
@@ -30,6 +59,7 @@ const Product = () => {
         console.log('This will open all reviews. Make it action sheet')
     }
 
+    // const renderRelated =
 
     return (
         <SafeAreaView
@@ -100,8 +130,16 @@ const Product = () => {
             </View>
 
             {/* Related container starts here */}
-            <View>
-
+            <View style={styles.related_container}>
+                <Text style={styles.related_title}>Product related to this item</Text>
+                <FlatList
+                    data={related}
+                    renderItem={({item})=>(
+                        <RelatedProductCard item={item}/>
+                    )}
+                    keyExtractor={item => item.title}
+                    horizontal
+                />
             </View>
             
         </View>
@@ -257,6 +295,7 @@ const styles = StyleSheet.create({
         backgroundColor:COLORS.white,
         paddingHorizontal:SIZES.font,
         marginVertical:8,
+        paddingBottom:SIZES.base,
         elevation:1,
         borderRadius:8
     },
@@ -279,6 +318,16 @@ const styles = StyleSheet.create({
     reviewHeadBtnTxt:{
         color:COLORS.gray,
         ...FONTS.h4
+    },
+    related_container:{
+        marginVertical:SIZES.padding,
+        paddingLeft:SIZES.font
+    },
+    related_title:{
+        fontWeight:'bold',
+        ...FONTS.h3,
+        color:COLORS.dark,
+        marginBottom:6
     }
 
 })
