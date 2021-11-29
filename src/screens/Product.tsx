@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import { StyleSheet, Text, View, ScrollView, SafeAreaView, TouchableOpacity, Image, FlatList } from 'react-native'
 import {FONTS, SIZES, COLORS, constants, icons, images} from '../constants'
 import Carousel,{Pagination} from 'react-native-snap-carousel'
+import ActionSheet from 'react-native-actions-sheet';
 import {  AirbnbRating } from 'react-native-ratings';
 import Review from '../components/Review'
+import AddToCartSheet from '../components/AddToCartSheet'
+import LinearGradient from 'react-native-linear-gradient';
 import RelatedProductCard from '../components/RelatedProductCard'
+
 
 const related = [
     {
@@ -37,18 +41,33 @@ const related = [
 const ColorButton = ()=>(
     <TouchableOpacity
                     style={styles.colorBtn}
-                >
-                    <Image source={images.item1} style={styles.colorIcon}/>
-                </TouchableOpacity>
+    >
+        <Image source={images.item1} style={styles.colorIcon}/>
+    </TouchableOpacity>
 )
 
 const Product = () => {
+
+
+    // React hooks
+    const addToCartRef = useRef<ActionSheet>(null);
+
+    // Methods defination
+    // Take us to the back screen
     const handleBack = ()=>{
         console.log('handle get back')
     }
 
+    //Add item to the cart and close the action sheet
     const handleAddToCart =()=>{
         console.log('Handle add to cart')
+        addToCartRef.current?.hide();
+    }
+
+    // opens the add to cart bottom sheet
+    const handleOpenAddToCart = ()=>{
+        console.log('opens add to cart modal')
+        addToCartRef.current?.show();
     }
 
     const handleAddFavorite = ()=>{
@@ -127,6 +146,14 @@ const Product = () => {
                 </View>
                 
                 <Review />
+                <TouchableOpacity
+                    style={styles.review_fade}
+                >
+                <LinearGradient
+                style={styles.review_fade}
+                colors={['transparent', '#FFFFFF80']}
+                />
+                </TouchableOpacity>
             </View>
 
             {/* Related container starts here */}
@@ -144,6 +171,7 @@ const Product = () => {
             
         </View>
         </ScrollView>
+
         {/* Fixed bottom container */}
         <View
             style={styles.bottomContainer}
@@ -156,7 +184,7 @@ const Product = () => {
             </TouchableOpacity>
             <TouchableOpacity
                 style={styles.addToCart}
-                onPress={()=>handleAddToCart()}
+                onPress={()=>handleOpenAddToCart()}
             >
                <Text style={styles.addToCartTxt}>Add to Cart</Text>
             </TouchableOpacity>
@@ -167,6 +195,10 @@ const Product = () => {
                     <Image source={icons.heart} style={styles.favIcon} resizeMode='stretch'/>
                 </TouchableOpacity>
         </View>
+
+        {/* Add to cart action sheet */}
+        <AddToCartSheet handleAddToCart={()=>handleAddToCart()} addToCartRef={addToCartRef}/>
+
         </SafeAreaView>
     )
 }
@@ -318,6 +350,12 @@ const styles = StyleSheet.create({
     reviewHeadBtnTxt:{
         color:COLORS.gray,
         ...FONTS.h4
+    },
+    review_fade:{
+        width:SIZES.width,
+        height:90,
+        position:'absolute',
+        bottom:0
     },
     related_container:{
         marginVertical:SIZES.padding,

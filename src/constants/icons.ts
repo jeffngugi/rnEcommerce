@@ -13,5 +13,7 @@ const search = require('../assets/icons/search.png')
 const more = require('../assets/icons/more.png')
 const back = require('../assets/icons/back.png')
 const thumb = require('../assets/icons/thumb.png')
+const minus = require('../assets/icons/minus.png')
+const plus = require('../assets/icons/plus.png')
 
-export default{down, home, heart, heartfilled, catalogue, cart, user, userfilled, bell, menu, like, more, search, back, thumb}
+export default{down, home, heart, heartfilled, catalogue, cart, user, userfilled, bell, menu, like, more, search, back, thumb, minus, plus}

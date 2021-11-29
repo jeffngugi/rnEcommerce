@@ -53,6 +53,7 @@ const Review = () => {
                     <Text>Helpful</Text>
                     <Image source={icons.thumb} style={styles.like_icon}/>
                 </TouchableOpacity>
+                
             </View>
         </View>
     )
