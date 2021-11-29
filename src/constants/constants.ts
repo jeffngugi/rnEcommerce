@@ -77,4 +77,43 @@ const bannerData = [
     }
 ]
 
-export default {catalogue, bannerData}
+const subcategories = [
+    {
+
+        id:1,
+        name:'All'
+    },
+    {
+        id:2,
+        name:'Shoes'
+    },
+    {
+        id:3,
+        name:'Jewelry'
+    },
+    {
+        id:4,
+        name:'Watches'
+    },
+    {
+        id:5,
+        name:'Handbags'
+    },
+    {
+        id:6,
+        name:'Access'
+    },
+    {
+        id:7,
+        name:"Men's Fashion"
+    },
+    {
+        id:8,
+        name:'Womens Fashion'
+    },
+    
+
+  ];
+
+
+export default {catalogue, bannerData, subcategories}

@@ -7,6 +7,7 @@ const Banner = () => {
     const carouselRef = useRef(null)
     const [active, setActive] = useState(0)
 
+    
     const _renderItem = (item)=>(
         <View>
             <View style={styles.imgContainer}>

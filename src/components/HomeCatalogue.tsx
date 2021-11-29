@@ -1,19 +1,33 @@
-import React from 'react'
+import React, {useRef} from 'react'
 import { StyleSheet, Text, View, TouchableOpacity, Image, FlatList} from 'react-native'
 import { COLORS, FONTS, icons, SIZES, constants} from '../constants'
+import ActionSheet from 'react-native-actions-sheet';
+import CategoriesActionSheet from './CategoriesActionSheet'
 
 
-  interface ICatalogue{
+  interface Item{
     id: number;
     name: string;
     image: any;
   }
-
+const catalogues:Array<Item> = constants.catalogue
 
 const HomeCatalogue = () => {
+    const actionSheetRef = useRef<ActionSheet>(null);
+    
+    const handleOpenCategory = ()=>{
+        console.log('this will open action sheet')
+        actionSheetRef.current?.show();
+    }
+
+    const handleCloseCategory = ()=>{
+        actionSheetRef.current?.hide()
+    }
+
     const renderItem = ({item}) =>(
             <TouchableOpacity
                 style={styles.singleCat}
+                onPress={handleOpenCategory}
             >
                 <Image source={item.image} style={styles.catImage}/>
                 <View style={styles.catOverley}>
@@ -39,12 +53,13 @@ const HomeCatalogue = () => {
             </View>
             <View style={styles.flatlistContainer}>
                 <FlatList 
-                    data={constants.catalogue}
+                    data={catalogues}
                     renderItem={renderItem}
                     keyExtractor={item => item.name}
                     horizontal
                 />
             </View>
+            <CategoriesActionSheet actionSheetRef={actionSheetRef} handleCloseCategory={handleCloseCategory} items={constants.subcategories}/>
         </View>
     )
 }
