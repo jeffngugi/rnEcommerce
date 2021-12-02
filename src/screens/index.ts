@@ -7,5 +7,6 @@ import Profile from './Profile'
 import Cart from './Cart'
 import Favorite from './Favorite'
 import Product from './Product'
+import Items from './Items'
 
-export {Starting, Login, Home, Verification, Cart, Catalogue, Profile, Favorite, Product }
+export {Starting, Login, Home, Verification, Cart, Catalogue, Profile, Favorite, Product, Items }

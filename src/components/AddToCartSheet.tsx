@@ -11,6 +11,7 @@ const AddToCartSheet = ({handleAddToCart, addToCartRef}) => {
     const addToCart =()=>{
         console.log('logic to add to cart')
         handleAddToCart()
+        setCartCount(1)
     }
   return (
     <ActionSheet
