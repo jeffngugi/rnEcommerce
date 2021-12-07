@@ -7,8 +7,12 @@ const Banner = () => {
     const carouselRef = useRef(null)
     const [active, setActive] = useState(0)
 
+    interface IBannerData{
+        id:number,
+        name:string
+    }
     
-    const _renderItem = (item)=>(
+    const _renderItem = (item:IBannerData)=>(
         <View>
             <View style={styles.imgContainer}>
                 <Image source={images.banner1} style={styles.bannerImg} />
@@ -28,7 +32,7 @@ const Banner = () => {
             <Carousel
                     ref={carouselRef}
                     data={constants.bannerData}
-                    renderItem={({ item, index })=>_renderItem(item)}
+                    renderItem={(data: { item: IBannerData; index: number })=>_renderItem(data.item)}
                     sliderWidth={SIZES.width-(SIZES.font*2)}
                     itemWidth={SIZES.width-(SIZES.font*2)}
                     layout={'default'}

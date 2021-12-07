@@ -1,9 +1,15 @@
-import React, {useState} from 'react'
+import React, {useState, FC,RefObject } from 'react'
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity, Image } from 'react-native'
 import ActionSheet from 'react-native-actions-sheet';
 import {COLORS, FONTS, icons, images, SIZES,} from '../constants'
 
-const AddToCartSheet = ({handleAddToCart, addToCartRef}) => {
+
+export interface IAddToCartSheet{
+    handleAddToCart:()=>void;
+    addToCartRef:RefObject<ActionSheet>;
+}
+
+const AddToCartSheet:FC<IAddToCartSheet> = ({handleAddToCart, addToCartRef}) => {
 
     const [cartCount, setCartCount] = useState(1)
     

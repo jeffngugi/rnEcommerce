@@ -6,6 +6,7 @@ const smarthome  = require('../assets/images/cat-women.png')
 const art  = require('../assets/images/cat-art.png')
 const baby  = require('../assets/images/cat-baby.png')
 const sport  = require('../assets/images/cat-sport.png')
+// import sport from '../assets/images/flag.png'
 
 const catalogue =[
     {

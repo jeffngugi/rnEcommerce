@@ -9,7 +9,7 @@ const Tab = createBottomTabNavigator()
 
 interface ITabProps {
   children?:any;
-  onPress: (event: GestureResponderEvent) => void
+  onPress?: (event: GestureResponderEvent) => void
 }
 
 const TabBarCustomButton =({children, onPress}:ITabProps)=>{

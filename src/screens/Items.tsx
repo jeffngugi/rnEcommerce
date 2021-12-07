@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, SafeAreaView, ScrollView, TouchableOpacity} fro
 import HomeHeader from '../components/HomeHeader'
 import ItemBtn from '../components/ItemBtn'
 import DropDownPicker from 'react-native-dropdown-picker';
+import ProductCard from '../components/ProductCard'
 import {COLORS, SIZES, FONTS, constants, icons, images} from '../constants'
 
 const Items = () => {
@@ -47,7 +48,11 @@ const Items = () => {
                 </View>
             </View>
             <View style={styles.body}>
-                
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
             </View>
             </View>
         </SafeAreaView>
@@ -85,6 +90,9 @@ const styles = StyleSheet.create({
         fontWeight:'bold'
     },
     body:{
-        marginVertical:SIZES.base
+        marginVertical:SIZES.base,
+        flexDirection:'row',
+        flexWrap:'wrap',
+        justifyContent:'space-between'
     }
 })

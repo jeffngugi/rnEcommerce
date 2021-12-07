@@ -1,8 +1,22 @@
-import React from 'react'
-import { StyleSheet, Text, Image, View, TouchableOpacity } from 'react-native'
+import React, {FC} from 'react'
+import { StyleSheet, Text, Image, View, TouchableOpacity, ImageSourcePropType } from 'react-native'
 import { COLORS, FONTS, images, SIZES } from '../constants'
 
-const CatalogueCard = ({item, handleOpenCategory}) => {
+export interface ICatalogueCard{
+    item:IItem;
+    handleOpenCategory:() => void;
+}
+
+export interface IItem{
+    id:number,
+    name:string,
+    image:ImageSourcePropType
+}
+
+// const CatalogueCard:FC<ICatalogueCard> = ({item, handleOpenCategory}) => {
+const CatalogueCard = (props:ICatalogueCard) => {
+    const {handleOpenCategory, item} = props
+    
     return (
         <TouchableOpacity
             style={styles.container}
