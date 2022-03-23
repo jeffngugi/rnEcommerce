@@ -2,15 +2,17 @@ import React from 'react'
 import { StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native'
 import { COLORS, icons, images, SIZES } from '../constants'
 import {  AirbnbRating } from 'react-native-ratings';
+import {useNavigation} from '@react-navigation/native'
 
 const ProductCard = () => {
+    const navigation = useNavigation()
     return (
         <View 
             style={styles.container}
         >
             <TouchableOpacity
                 style={styles.imgContainer}
-                onPress={()=>console.log('take me to single item')}
+                onPress={()=>navigation.navigate('Product' as never)}
             >
                 <Image style={styles.cardImage} source={images.product1}/>
             </TouchableOpacity>
@@ -21,7 +23,9 @@ const ProductCard = () => {
                     <Image source={icons.heart} style={styles.favIcon} />
             </TouchableOpacity>
             <TouchableOpacity
-                onPress={()=>console.log('take me to single item')}
+                onPress={()=>{
+                    navigation.navigate('Product' as never)
+                }}
             >
             <View style={styles.rating}>
                <AirbnbRating

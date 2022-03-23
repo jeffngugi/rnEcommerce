@@ -11,10 +11,11 @@ const RootNavigation = () => {
       <Stack.Navigator
         screenOptions={{headerShown:false}}
       >
-        <Stack.Screen name="Starting" component={Items}/>
+        <Stack.Screen name="Starting" component={Starting}/>
         <Stack.Screen name='Login' component={Login} />
         <Stack.Screen name='Verification' component={Verification} />
         <Stack.Screen name='HomeNav' component={HomeTabs} />
+        <Stack.Screen name='Product' component={Product} />
 
       </Stack.Navigator>
     )

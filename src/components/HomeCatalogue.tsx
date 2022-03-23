@@ -1,22 +1,23 @@
 import React, {useRef} from 'react'
-import { StyleSheet, Text, View, TouchableOpacity, Image, FlatList} from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, Image, FlatList, ListRenderItem} from 'react-native'
 import { COLORS, FONTS, icons, SIZES, constants} from '../constants'
 import ActionSheet from 'react-native-actions-sheet';
 import CategoriesActionSheet from './CategoriesActionSheet'
-
+import { useNavigation } from '@react-navigation/native';
 
   interface Item{
     id: number;
     name: string;
     image: any;
   }
+  
 const catalogues:Array<Item> = constants.catalogue
 
 const HomeCatalogue = () => {
     const actionSheetRef = useRef<ActionSheet>(null);
+    const navigation = useNavigation()
     
     const handleOpenCategory = ()=>{
-        console.log('this will open action sheet')
         actionSheetRef.current?.show();
     }
 
@@ -24,7 +25,7 @@ const HomeCatalogue = () => {
         actionSheetRef.current?.hide()
     }
 
-    const renderItem = ({item}) =>(
+    const renderItem:ListRenderItem<any> = ({item}) =>(
             <TouchableOpacity
                 style={styles.singleCat}
                 onPress={handleOpenCategory}
@@ -45,7 +46,7 @@ const HomeCatalogue = () => {
                 <Text style={styles.headTxt}>Catalogue</Text>
                 <TouchableOpacity
                      style={styles.more}
-                     onPress={()=>console.log('pressed single catalogue')}
+                    onPress={() => navigation.navigate('HomeNav' as never, { screen: 'Catalogue' } as never)}
                 >
                     <Text style={styles.moreTxt}>See More</Text>
                     <Image source={icons.more} style={styles.moreIcon} />
@@ -84,7 +85,8 @@ const styles = StyleSheet.create({
     },
     more:{
         flexDirection:'row',
-        alignItems:'center'
+        alignItems:'center',
+        marginVertical:8
     },
     moreTxt:{
         color:COLORS.gray,

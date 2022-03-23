@@ -8,7 +8,7 @@ import Review from '../components/Review'
 import AddToCartSheet from '../components/AddToCartSheet'
 import LinearGradient from 'react-native-linear-gradient';
 import RelatedProductCard from '../components/RelatedProductCard'
-
+import {useNavigation} from '@react-navigation/native'
 
 const related = [
     {
@@ -48,7 +48,7 @@ const ColorButton = ()=>(
 
 const Product = () => {
 
-
+    const navigation = useNavigation()
     // React hooks
     const addToCartRef = useRef<ActionSheet>(null);
 
@@ -56,6 +56,7 @@ const Product = () => {
     // Take us to the back screen
     const handleBack = ()=>{
         console.log('handle get back')
+        navigation.goBack()
     }
 
     //Add item to the cart and close the action sheet
